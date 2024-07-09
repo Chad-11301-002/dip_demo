@@ -7,8 +7,8 @@ def image_formation_model(f, x0, y0, sigma):
     nr, nc = f.shape[:2]
     
     # Create coordinate grids
-    x = np.arange(nr).reshape(-1, 1)
-    y = np.arange(nc).reshape(1, -1)
+    x = np.arange(nr).reshape(-1, 1) #-1代表此函數交由numpy處理決定，我方只要一行，因此此為列向量
+    y = np.arange(nc).reshape(1, -1) #與上相同，此處行交由numpy處理決定，我方只要一列，此為行向量
     
     # Calculate the illumination matrix
     illumination = np.exp(-((x - x0) ** 2 + (y - y0) ** 2) / (2 * sigma ** 2))
